@@ -8,6 +8,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
+
+//documentation
 @Schema(
         name = "Customer",
         description = "Schema to hold Customer and Account information"
