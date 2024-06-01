@@ -102,7 +102,8 @@ public class AccountsController {
             )
     }
     )
-    @GetMapping("/fetch")
+        // api/fetch
+    @GetMapping("/fetch") //fetch account details based on customer mobile number
     public ResponseEntity<CustomerDto> fetchAccountDetails(@RequestParam
                                                                @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                                String mobileNumber) {
