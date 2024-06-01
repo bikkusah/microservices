@@ -111,7 +111,7 @@ ER Diagram:
      * @param customerDto - CustomerDto Object
      * @return boolean indicating if the update of Account details is successful or not
      */
-    @Override
+    @Override// update the account except account number
     public boolean updateAccount(CustomerDto customerDto) {
         boolean isUpdated = false;
         AccountsDto accountsDto = customerDto.getAccountsDto();
