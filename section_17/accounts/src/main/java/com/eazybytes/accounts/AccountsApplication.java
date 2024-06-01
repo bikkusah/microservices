@@ -24,6 +24,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
                                                        // for capturing audit information (like createdBy, modifiedBy).
 
 @EnableConfigurationProperties(value = {AccountsContactInfoDto.class})
+	//documentation
 @OpenAPIDefinition(
 		info = @Info(
 				title = "Accounts microservice REST API Documentation",
