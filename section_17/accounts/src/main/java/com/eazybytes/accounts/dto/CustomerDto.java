@@ -37,5 +37,5 @@ public class CustomerDto {
     @Schema(
             description = "Account details of the Customer"
     )
-    private AccountsDto accountsDto;
+    private AccountsDto accountsDto; //here we are aggregating account dto too , so we can send in 1 request cutomer and account info
 }
