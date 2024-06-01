@@ -38,13 +38,15 @@ public class AccountsServiceImpl  implements IAccountsService {
      */
     @Override
     public void createAccount(CustomerDto customerDto) {
+        //dto to entity for customer
         Customer customer = CustomerMapper.mapToCustomer(customerDto, new Customer());
         Optional<Customer> optionalCustomer = customerRepository.findByMobileNumber(customerDto.getMobileNumber());
         if(optionalCustomer.isPresent()) {
             throw new CustomerAlreadyExistsException("Customer already registered with given mobileNumber "
                     +customerDto.getMobileNumber());
         }
-        Customer savedCustomer = customerRepository.save(customer);
+        Customer savedCustomer = customerRepository.save(customer); //saving in db
+        //
         Accounts savedAccount = accountsRepository.save(createNewAccount(savedCustomer));
         sendCommunication(savedAccount, savedCustomer);
     }
@@ -64,6 +66,7 @@ public class AccountsServiceImpl  implements IAccountsService {
     private Accounts createNewAccount(Customer customer) {
         Accounts newAccount = new Accounts();
         newAccount.setCustomerId(customer.getCustomerId());
+        //we are generating account number of 10 digit
         long randomAccNumber = 1000000000L + new Random().nextInt(900000000);
 
         newAccount.setAccountNumber(randomAccNumber);
@@ -71,8 +74,23 @@ public class AccountsServiceImpl  implements IAccountsService {
         newAccount.setBranchAddress(AccountsConstants.ADDRESS);
         return newAccount;
     }
+    /*
+ER Diagram:
++--------------+          +----------------+
+| customer     |          | accounts       |
++--------------+          +----------------+
+| customer_id  |<---------| customer_id    |
+| name         |          | account_number |
+| email        |          | account_type   |
+| mobile_number|          | branch_address |
+| created_at   |          |communication_sw|
+| created_by   |          | created_at     |
+| updated_at   |          | created_by     |
+| updated_by   |          | updated_at     |
++--------------+          | updated_by     |
+                          +----------------+
 
-    /**
+   */ /**
      * @param mobileNumber - Input Mobile Number
      * @return Accounts Details based on a given mobileNumber
      */
