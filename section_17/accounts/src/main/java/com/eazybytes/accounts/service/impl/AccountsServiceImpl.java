@@ -29,8 +29,8 @@ public class AccountsServiceImpl  implements IAccountsService {
 
     private static final Logger log = LoggerFactory.getLogger(AccountsServiceImpl.class);
 
-    private AccountsRepository accountsRepository;
-    private CustomerRepository customerRepository;
+    private AccountsRepository accountsRepository; //auto wire autmatically bec its sing arg and we have used lambok
+    private CustomerRepository customerRepository;//auto wire autmatically bec its sing arg and we have used lambok
     private final StreamBridge streamBridge;
 
     /**
