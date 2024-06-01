@@ -31,6 +31,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Eazy Bytes
  */
 
+//documentation
 @Tag(
         name = "CRUD REST APIs for Accounts in EazyBank",
         description = "CRUD REST APIs in EazyBank to CREATE, UPDATE, FETCH AND DELETE account details"
@@ -57,7 +58,7 @@ public class AccountsController {
 
     @Autowired
     private AccountsContactInfoDto accountsContactInfoDto;
-
+//documentation
     @Operation(
             summary = "Create Account REST API",
             description = "REST API to create new Customer &  Account inside EazyBank"
