@@ -42,6 +42,7 @@ public class AccountsController {
 
     private static final Logger logger = LoggerFactory.getLogger(AccountsController.class);
 
+        //we are doing constructor injection and we are not writing constructor bec its single constructor and we have used allargs constructor
     private final IAccountsService iAccountsService;
 
     public AccountsController(IAccountsService iAccountsService) {
