@@ -4,6 +4,7 @@ public final class AccountsConstants {
 
     private AccountsConstants() {
         // restrict instantiation
+        //constructor is private and hence no one can create an object for this class
     }
 //all this constans are static and final so that no one can change that
     public static final String  SAVINGS = "Savings";
