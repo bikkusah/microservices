@@ -6,7 +6,7 @@ import lombok.Data;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
-
+//this class is for client. client will see the message if anything goes wrong
 @Data @AllArgsConstructor
 @Schema(
         name = "ErrorResponse",
