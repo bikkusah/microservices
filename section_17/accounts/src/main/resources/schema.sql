@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `created_by` varchar(20) NOT NULL,             -- User who created the account
   `updated_at` date DEFAULT NULL,                -- Date when the account was last updated
   `updated_by` varchar(20) DEFAULT NULL          -- User who last updated the account
-);'
+);
 /*
 
 +--------------+          +----------------+
