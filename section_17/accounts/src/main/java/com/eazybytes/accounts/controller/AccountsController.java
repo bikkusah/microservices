@@ -36,7 +36,7 @@ import org.springframework.web.bind.annotation.*;
         description = "CRUD REST APIs in EazyBank to CREATE, UPDATE, FETCH AND DELETE account details"
 )
 @RestController
-@RequestMapping(path="/api", produces = {MediaType.APPLICATION_JSON_VALUE})
+@RequestMapping(path="/api", produces = {MediaType.APPLICATION_JSON_VALUE})// /api bec its api,supports response type of JSON
 @Validated
 public class AccountsController {
 
