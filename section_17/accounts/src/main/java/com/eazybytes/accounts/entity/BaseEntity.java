@@ -13,8 +13,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
-
-@MappedSuperclass
+//the purpose of this class is we need createdBy,bla bla in both table so we are creating ths class and we will use in our other tablble
+@MappedSuperclass //this class will act as super class and we can extend this class
 @EntityListeners(AuditingEntityListener.class)
 @Getter @Setter @ToString
 public class BaseEntity {
