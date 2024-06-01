@@ -21,11 +21,11 @@ import java.util.Map;
 @ControllerAdvice //whenever exeception in any controller pls invoke method written in this class
 public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler {
 
-    @Override
+    @Override//if validation fails error will come from here
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
         Map<String, String> validationErrors = new HashMap<>();
-        List<ObjectError> validationErrorList = ex.getBindingResult().getAllErrors();
+        List<ObjectError> validationErrorList = ex.getBindingResult().getAllErrors();//will give all validation failed
 
         validationErrorList.forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
