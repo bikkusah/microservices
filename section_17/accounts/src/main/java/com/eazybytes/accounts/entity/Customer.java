@@ -7,11 +7,12 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
+@AllArgsConstructor//will generate all argument constructot
 @NoArgsConstructor
+    //we didn't use @Table bec class name Customer and table name Customer is matching so thr is no nneed
 public class Customer extends BaseEntity {
 
-    @Id
+    @Id //primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private Long customerId;
