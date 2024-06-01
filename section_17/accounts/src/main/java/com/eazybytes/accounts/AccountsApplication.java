@@ -19,7 +19,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 /*@ComponentScans({ @ComponentScan("com.eazybytes.accounts.controller") })
 @EnableJpaRepositories("com.eazybytes.accounts.repository")
 @EntityScan("com.eazybytes.accounts.model")*/
-@EnableJpaAuditing(auditorAwareRef = "auditAwareImpl")
+@EnableJpaAuditing(auditorAwareRef = "auditAwareImpl") // Enabling JPA Auditing in the application.
+                                                       // This tells Spring to use the bean named "auditAwareImpl" 
+                                                       // for capturing audit information (like createdBy, modifiedBy).
+
 @EnableConfigurationProperties(value = {AccountsContactInfoDto.class})
 @OpenAPIDefinition(
 		info = @Info(
