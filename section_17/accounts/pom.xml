@@ -11,7 +11,7 @@
 	<groupId>com.eazybytes</groupId>
 	<artifactId>accounts</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>jar</packaging><!--jar is good when we want to create docker image-->
 	<name>accounts</name>
 	<description>Microservice for Accounts</description>
 	<properties>
