@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@ControllerAdvice
+@ControllerAdvice //whenever exeception in any controller pls invoke method written in this class
 public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler {
 
     @Override
@@ -59,7 +59,7 @@ public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(errorResponseDTO, HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(CustomerAlreadyExistsException.class)
+    @ExceptionHandler(CustomerAlreadyExistsException.class)//this method will handle exception from this class
     public ResponseEntity<ErrorResponseDto> handleCustomerAlreadyExistsException(CustomerAlreadyExistsException exception,
                                                                                  WebRequest webRequest){
         ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
