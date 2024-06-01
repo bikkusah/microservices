@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
-@Data
+@Data //equivlent of geetter setter hashcode ....
 @Schema(
         name = "Accounts",
         description = "Schema to hold Account information"
