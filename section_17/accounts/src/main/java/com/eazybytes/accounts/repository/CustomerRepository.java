@@ -12,6 +12,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     // This method tells Spring Data JPA to fetch a record from the customer table
     // based on the value in the mobile_number column.
     // Equivalent SQL: SELECT * FROM customer WHERE mobile_number = ?
+    //this concept is called as Dervied name concept
     Optional<Customer> findByMobileNumber(String mobileNumber);
 
     // If you want to fetch data based on multiple columns, you can define additional methods.
