@@ -50,7 +50,7 @@ public class AccountsController {
         this.iAccountsService = iAccountsService;
     }
 
-    @Value("${build.version}")//loadig from .yaml file to send version to client
+    @Value("${build.version}")//loadig from .yaml file to send version to client,this hardcoding is not good way if we have various properties 
     private String buildVersion;
 
     @Autowired
