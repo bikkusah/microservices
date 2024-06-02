@@ -23,7 +23,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
                                                        // This tells Spring to use the bean named "auditAwareImpl" 
                                                        // for capturing audit information (like createdBy, modifiedBy).
 
-@EnableConfigurationProperties(value = {AccountsContactInfoDto.class})
+@EnableConfigurationProperties(value = {AccountsContactInfoDto.class}) //we have defined properties in Acco.class
 	//documentation
 @OpenAPIDefinition(
 		info = @Info(
