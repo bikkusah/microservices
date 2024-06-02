@@ -5,7 +5,7 @@ server:
   port: 8080 #default port even if not mentioned it will start here
 spring:
   application:
-    name: "accounts"
+    name: "accounts" #in configuration  we named as accounts
   profiles:
     active: "prod"
   datasource:
@@ -22,7 +22,7 @@ spring:
       ddl-auto: update #if thr is no database create all db based on our sql we mentioned
     show-sql: true #print all sql query u are going to execute so that its easy to view and easy to debug
   config:
-    import: "optional:configserver:http://localhost:8071/"
+    import: "optional:configserver:http://localhost:8071/" #here we saying we have all configuration mentioned
   cloud:
     kubernetes:
       discovery:
