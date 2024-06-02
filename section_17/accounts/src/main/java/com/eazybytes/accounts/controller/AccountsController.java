@@ -54,7 +54,8 @@ public class AccountsController {
     private String buildVersion;
 
     @Autowired
-    private Environment environment;
+    private Environment environment;//for environment varisable which are very sensitive like password,this is also not so helpful method,
+        //we can only read 1 properties and all thos properties has to be hardcoded
 
     @Autowired
     private AccountsContactInfoDto accountsContactInfoDto;
@@ -243,7 +244,7 @@ public class AccountsController {
     public ResponseEntity<String> getJavaVersion() {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(environment.getProperty("JAVA_HOME"));
+                .body(environment.getProperty("JAVA_HOME"));//java home will be read by rest api and will be send to client
     }
 
     public ResponseEntity<String> getJavaVersionFallback(Throwable throwable) {
