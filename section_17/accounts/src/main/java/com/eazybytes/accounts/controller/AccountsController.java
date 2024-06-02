@@ -57,7 +57,7 @@ public class AccountsController {
     private Environment environment;//for environment varisable which are very sensitive like password,this is also not so helpful method,
         //we can only read 1 properties and all thos properties has to be hardcoded
 
-    @Autowired
+    @Autowired//we are using values directly
     private AccountsContactInfoDto accountsContactInfoDto;
 //documentation
     @Operation(
