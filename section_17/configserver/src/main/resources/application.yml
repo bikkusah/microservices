@@ -1,46 +1,46 @@
 spring:
   application:
-    name: "configserver"
+    name: "configserver" # Name of the Spring Boot application
   profiles:
-    # active: native
-    active: git
+    active: git # Active profile is set to 'git'. Uncomment 'native' if you want to use local configuration.
   cloud:
     config:
       server:
+        # Uncomment the following lines if using native profile to specify configuration locations
         # native:
-          # search-locations: "classpath:/config"
-          # search-locations: "file:///Users//eazybytes//Documents//config"
+          # search-locations: "classpath:/config" # Local classpath for configuration
+          # search-locations: "file:///Users//eazybytes//Documents//config" # Local file system path for configuration
         git:
-          uri: "https://github.com/eazybytes/eazybytes-config.git"
-          default-label: main #name of branch
-          timeout: 5 #connect till 5second else throw error
-          clone-on-start: true #pls clone during startup only
-          force-pull: true 
+          uri: "https://github.com/eazybytes/eazybytes-config.git" # Git repository URI for configuration
+          default-label: main # Name of the branch to pull configurations from
+          timeout: 5 # Connection timeout in seconds; if it exceeds, an error will be thrown
+          clone-on-start: true # Clone the repository during application startup
+          force-pull: true # Force pull the latest changes from the Git repository
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: "*" # Expose all management endpoints over the web
   health:
     readiness-state:
-      enabled: true
+      enabled: true # Enable readiness state health checks
     liveness-state:
-      enabled: true
+      enabled: true # Enable liveness state health checks
   endpoint:
     health:
       probes:
-        enabled: true
+        enabled: true # Enable health probes for the health endpoint
   metrics:
     tags:
-      application: ${spring.application.name}
+      application: ${spring.application.name} # Tag metrics with the application name
 
 encrypt:
-  key: "45D81EC1EF61DF9AD8D3E5BB397F9" #for encryping and decrypting properties
+  key: "45D81EC1EF61DF9AD8D3E5BB397F9" # Encryption key for encrypting and decrypting properties
 
 server:
-  port: 8071
+  port: 8071 # Port on which the server will run
 
 logging:
   pattern:
-    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]" # Logging pattern including log level, application name, trace ID, and span ID
