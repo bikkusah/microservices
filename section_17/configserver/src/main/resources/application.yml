@@ -12,10 +12,10 @@ spring:
           # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
           uri: "https://github.com/eazybytes/eazybytes-config.git"
-          default-label: main
-          timeout: 5
-          clone-on-start: true
-          force-pull: true
+          default-label: main #name of branch
+          timeout: 5 #connect till 5second else throw error
+          clone-on-start: true #pls clone during startup only
+          force-pull: true 
 
 management:
   endpoints:
